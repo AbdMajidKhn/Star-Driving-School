@@ -7,7 +7,7 @@ import { Grid } from '@mui/material'
 export default function SignUp() {
   return (
     <>
-      <div className='bg-[#222222]'>
+      <div className=''>
         <div className='flex'>
           <div className='hidden sm:hidden md:hidden lg:block lg:w-2/5 xl:w-1/3'>
             <div>

@@ -62,7 +62,7 @@ const Navbar = () => {
       sx={{
         // zIndex: 2,
         // background: '#242424',
-        background: '#121212',
+        background: '#c82f27',
         paddingLeft: { xs: '1px', sm: '55px' },
         paddingRight: { xs: '1px', md: '30px' },
       }}
@@ -75,7 +75,7 @@ const Navbar = () => {
           </Grid>
         </SocialBox> */}
 
-        <div className='ml-[11.5rem] text-[20x] sm:text-[28px] md:text-[32px] lg:text-[24px] font-russoone font-normal'>
+        <div className='ml-[11.5rem] text-[20x] sm:text-[28px] md:text-[32px] lg:text-[24px] font-russoone font-normal' >
         All Star Driving School        </div>
         {/* </Typography> */}
 

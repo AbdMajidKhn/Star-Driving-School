@@ -20,19 +20,21 @@ import { useRouter } from 'next/navigation'
 const drawerWidth = 240
 
 const Sidebar = () => {
-  const router = useRouter()
+  const router = useRouter();
+
   const handleSiderNavigation = (itemText: string) => {
-    console.log('The item text is:', itemText)
+    console.log('The item text is:', itemText);
     if (itemText == 'Dashboard') {
-      router.push('/')
+      router.push('/');
     } else if (itemText === 'Instructor') {
-      router.push('/booklist')
+      router.push('/booklist');
     } else if (itemText === 'Students') {
-      router.push('/memberlist')
+      router.push('/memberlist');
     } else if (itemText === 'Fees') {
-      router.push('/issuebook')
+      router.push('/issuebook');
     }
-  }
+  };
+
   return (
     <>
       <Drawer
@@ -41,45 +43,34 @@ const Sidebar = () => {
           width: drawerWidth,
           flexShrink: 0,
           Top: '100px',
-          //   zIndex: 2,
           [`& .MuiDrawer-paper`]: { width: drawerWidth, boxSizing: 'border-box' },
         }}
       >
-        {/* <Toolbar /> */}
         <div className='flex justify-center items-center'>
-  <img src='Images/eco.png' style={{borderRadius: '10%', width: '195px', height: '100px', marginTop: '20px'}} />
-</div>
+          <img src='Images/eco.png' style={{ borderRadius: '10%', width: '195px', height: '100px', marginTop: '20px' }} />
+        </div>
         <Box sx={{ overflow: 'auto' }}>
           <List>
-            {/* {['Dashboard', 'Books', 'Members'].map((text, index) => ( */}
-            {/* <ListItem key='logo' disablePadding>
+            <ListItem key='Dashboard' disablePadding sx={{ '&:hover': { backgroundColor: '#c82f27', color:'white' } }}>
               <ListItemButton onClick={() => handleSiderNavigation('Dashboard')}>
                 <ListItemIcon>
-                  <DashboardIcon />{' '}
-                </ListItemIcon>
-
-              </ListItemButton>
-            </ListItem> */}
-            <ListItem key='Dashboard' disablePadding>
-              <ListItemButton onClick={() => handleSiderNavigation('Dashboard')}>
-                <ListItemIcon>
-                  <DashboardIcon />{' '}
+                  <DashboardIcon />
                 </ListItemIcon>
                 <ListItemText primary='Dashboard' />
               </ListItemButton>
             </ListItem>
-            <ListItem key='Instructor' disablePadding>
+            <ListItem key='Instructor' disablePadding sx={{ '&:hover': { backgroundColor: '#c82f27' , color:'white' } }}>
               <ListItemButton onClick={() => handleSiderNavigation('Instructor')}>
                 <ListItemIcon>
-                  <LibraryBooksIcon />{' '}
+                  <LibraryBooksIcon />
                 </ListItemIcon>
                 <ListItemText primary='Instructor' />
               </ListItemButton>
             </ListItem>
-            <ListItem key='Students' disablePadding>
+            <ListItem key='Students' disablePadding sx={{ '&:hover': { backgroundColor: '#c82f27' , color:'white' } }}>
               <ListItemButton onClick={() => handleSiderNavigation('Students')}>
                 <ListItemIcon>
-                  <Groups2Icon />{' '}
+                  <Groups2Icon />
                 </ListItemIcon>
                 <ListItemText primary='Students' />
               </ListItemButton>
@@ -87,10 +78,10 @@ const Sidebar = () => {
           </List>
           <Divider />
           <List>
-            <ListItem key='Issue Book' disablePadding>
+            <ListItem key='Fees' disablePadding sx={{ '&:hover': { backgroundColor: '#c82f27', color:'white' } }}>
               <ListItemButton onClick={() => handleSiderNavigation('Fees')}>
                 <ListItemIcon>
-                  <LibraryBooksIcon />{' '}
+                  <LibraryBooksIcon />
                 </ListItemIcon>
                 <ListItemText primary='Fees' />
               </ListItemButton>
@@ -99,7 +90,7 @@ const Sidebar = () => {
         </Box>
       </Drawer>
     </>
-  )
-}
+  );
+};
 
-export default Sidebar
+export default Sidebar;

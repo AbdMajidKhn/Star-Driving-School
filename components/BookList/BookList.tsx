@@ -25,26 +25,26 @@ const BookList = () => {
     router.push('/addbook')
   }
   const data = [
-    ['Instructor 1','something@gmail.com','555-2222-222' ,'Yes', 'Two', ' 1', 'Ok'],
-    ['Instructor 2','something@gmail.com','555-2222-222' ,'Yes', 'Three', ' 2', 'ok'],
-    ['Instructor 3','something@gmail.com','555-2222-222' ,'Yes', 'Four', ' 3', 'TB'],
-    ['Instructor 4','something@gmail.com','555-2222-222' ,'Learning', 'Four', ' 4', 'Ok'],
-    ['Instructor 5','something@gmail.com','555-2222-222' ,'Learning', 'Four', ' 5', 'Ok'],
-    ['Instructor 6','something@gmail.com','555-2222-222' ,'Learning', 'Four', ' 6', 'Ok'],
-    ['Instructor 7','something@gmail.com','555-2222-222' ,'Applied', 'Two', '7', 'Ok'],
-    ['Instructor 8','something@gmail.com','555-2222-222' ,'Yes', 'Two', ' 8', 'Ok'],
-    ['Instructor 9','something@gmail.com','555-2222-222' ,'Applied', 'Two', '9', 'Ok'],
-    ['Instructor 10',  'something@gmail.com','555-2222-222' ,'Yes','One', '10', 'Ok'],
-    ['Instructor 11', 'something@gmail.com','555-2222-222' ,'Applied','Five', '11', 'Ok'],
-    ['Instructor 12' ,'something@gmail.com','555-2222-222' ,'Applied','Six', '12', 'Ok'],
-    ['Instructor 13', 'Yes','something@gmail.com','5555-222-777' ,'Yes','Two', '13', 'Ok'],
-    ['Instructor 14', 'Yes','something@gmail.com','5555-222-777' ,'Yes','Four', '14', 'Ok'],
-    ['Instructor 15', 'Yes','something@gmail.com','5555-222-777' ,'Yes','One', '15', 'Ok'],
-    ['Instructor 16', 'Yes','something@gmail.com','5555-222-777' ,'Yes','Seven', '16', 'Ok'],
-    ['Instructor 17', 'Yes','something@gmail.com','5555-222-777' ,'Yes','Four', '17', 'Ok'],
-    ['Instructor 18', 'Yes','something@gmail.com','5555-222-777' ,'Yes','Three', '18', 'Ok'],
-    ['Instructor 19', 'Yes','something@gmail.com','5555-222-777' ,'Yes','Six', '19', 'Ok'],
-    ['Instructor 20', 'Yes','something@gmail.com','5555-222-777' ,'Yes','Four', '20', 'Ok'],
+    ['Instructor 1','something@gmail.com','555-2222-222' ,'Yes', 'Two', ' 1', 'Ok','$12'],
+    ['Instructor 2','something@gmail.com','555-2222-222' ,'Yes', 'Three', ' 2', 'ok','$12'],
+    ['Instructor 3','something@gmail.com','555-2222-222' ,'Yes', 'Four', ' 3', 'TB','$12'],
+    ['Instructor 4','something@gmail.com','555-2222-222' ,'Learning', 'Four', ' 4', 'Ok','$18'],
+    ['Instructor 5','something@gmail.com','555-2222-222' ,'Learning', 'Four', ' 5', 'Ok','$14'],
+    ['Instructor 6','something@gmail.com','555-2222-222' ,'Learning', 'Four', ' 6', 'Ok','$14'],
+    ['Instructor 7','something@gmail.com','555-2222-222' ,'Applied', 'Two', '7', 'Ok','$12'],
+    ['Instructor 8','something@gmail.com','555-2222-222' ,'Yes', 'Two', ' 8', 'Ok','$12'],
+    ['Instructor 9','something@gmail.com','555-2222-222' ,'Applied', 'Two', '9', 'Ok','$12'],
+    ['Instructor 10',  'something@gmail.com','555-2222-222' ,'Yes','One', '10', 'Ok','$12'],
+    ['Instructor 11', 'something@gmail.com','555-2222-222' ,'Applied','Five', '11', 'Ok','$11'],
+    ['Instructor 12' ,'something@gmail.com','555-2222-222' ,'Applied','Six', '12', 'Ok','$12'],
+    ['Instructor 13', 'Yes','something@gmail.com','5555-222-777' ,'Yes','Two', '13', 'Ok','$12'],
+    ['Instructor 14', 'Yes','something@gmail.com','5555-222-777' ,'Yes','Four', '14', 'Ok','$12'],
+    ['Instructor 15', 'Yes','something@gmail.com','5555-222-777' ,'Yes','One', '15', 'Ok','$12'],
+    ['Instructor 16', 'Yes','something@gmail.com','5555-222-777' ,'Yes','Seven', '16', 'Ok','$12'],
+    ['Instructor 17', 'Yes','something@gmail.com','5555-222-777' ,'Yes','Four', '17', 'Ok','$12'],
+    ['Instructor 18', 'Yes','something@gmail.com','5555-222-777' ,'Yes','Three', '18', 'Ok','$12'],
+    ['Instructor 19', 'Yes','something@gmail.com','5555-222-777' ,'Yes','Six', '19', 'Ok','$12'],
+    ['Instructor 20', 'Yes','something@gmail.com','5555-222-777' ,'Yes','Four', '20', 'Ok','$12'],
   ]
 
   const columns = [
@@ -99,6 +99,14 @@ const BookList = () => {
     {
       name: 'Medical History ',
       label: 'Medical History ',
+      options: {
+        filter: true,
+        sort: false,
+      },
+    },
+    {
+      name: 'Pick And Drop Charges ',
+      label: 'Pick And Drop Charges ',
       options: {
         filter: true,
         sort: false,

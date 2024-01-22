@@ -131,6 +131,40 @@ const AddIssueBook = () => {
               helperText={formik.touched.pictures && formik.errors.pictures}
             />
           </Grid>
+          <Grid item xs={12} sm={6}>
+            <TextField
+              id='pictures'
+              name='pictures'
+              label='Pick and Drop charges'
+              variant='outlined'
+              fullWidth
+              type='number'
+              value={formik.values.pictures}
+              onChange={formik.handleChange}
+              onKeyDown={(event) => {
+                event.stopPropagation()
+              }}
+              error={formik.touched.pictures && Boolean(formik.errors.pictures)}
+              helperText={formik.touched.pictures && formik.errors.pictures}
+            />
+          </Grid>
+          <Grid item xs={12} sm={6}>
+            <TextField
+              id='pictures'
+              name='pictures'
+              label= 'Vehicle provided for driving license test'
+              variant='outlined'
+              fullWidth
+              type='number'
+              value={formik.values.pictures}
+              onChange={formik.handleChange}
+              onKeyDown={(event) => {
+                event.stopPropagation()
+              }}
+              error={formik.touched.pictures && Boolean(formik.errors.pictures)}
+              helperText={formik.touched.pictures && formik.errors.pictures}
+            />
+          </Grid>
 
           <Grid item xs={12} container justifyContent='flex-end'>
             <Button

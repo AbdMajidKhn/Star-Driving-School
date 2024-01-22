@@ -25,26 +25,26 @@ const IssueBook = () => {
     router.push('/addissuebook')
   }
   const data = [
-    [' 1', '3', 'male', '$15', '$0.50', '$16'],
-    [' 2', '6', 'male', '$15', '$0.75', '$16'],
-    [' 3', '9', 'male', '$15', '$1.00', '$16'],
-    [' 4', '2', 'male', '$15', '$1.25', '$16'],
-    [' 5', '5', 'male', '$15', '$1.50', '$16'],
-    [' 6', '8', 'male', '$15', '$1.75', '$16'],
-    [' 7', '1', 'male', '$15', '$2.00', '$16'],
-    [' 8', '4', 'male', '$15', '$2.25', '$16'],
-    [' 9', '7', 'male', '$15', '$2.50', '$16'],
-    [' 10', '90', 'Female', '$12', '$2.75', '$16'],
-    [' 11', '11', 'Female', '$12', '$3.00', '$16'],
-    [' 12', '22', 'Female', '$12', '$3.25', '$16'],
-    [' 13', '33', 'Female', '$12', '$3.50', '$16'],
-    [' 14', '44', 'Female', '$12', '$3.75', '$16'],
-    [' 15', '55', 'Female', '$12', '$4.00', '$16'],
-    [' 16', '66', 'Female', '$12', '$4.25', '$16'],
-    [' 17', '77', 'Female', '$12', '$4.50', '$16'],
-    [' 18', '88', 'Female', '$12', '$4.75', '$16'],
-    [' 19', '99', 'Female', '$12', '$5.00', '$16'],
-    [' 20', '00', 'Female', '$12', '$5.25', '$16'],
+    [' 1', '3', 'male', '$15', '$0.50', '$16','15$','Three'],
+    [' 2', '6', 'male', '$15', '$0.75', '$16','15$','Three'],
+    [' 3', '9', 'male', '$15', '$1.00', '$16','15$','Three'],
+    [' 4', '2', 'male', '$15', '$1.25', '$16','15$','Three'],
+    [' 5', '5', 'male', '$15', '$1.50', '$16','15$','Three'],
+    [' 6', '8', 'male', '$15', '$1.75', '$16','15$','Three'],
+    [' 7', '1', 'male', '$15', '$2.00', '$16','15$','Three'],
+    [' 8', '4', 'male', '$15', '$2.25', '$16','15$','Three'],
+    [' 9', '7', 'male', '$15', '$2.50', '$16','15$','Three'],
+    [' 10', '90', 'Female', '$12', '$2.75', '$16','12$','Two'],
+    [' 11', '11', 'Female', '$12', '$3.00', '$16','12$','Two'],
+    [' 12', '22', 'Female', '$12', '$3.25', '$16','17$','Two'],
+    [' 13', '33', 'Female', '$12', '$3.50', '$16','17$','Two'],
+    [' 14', '44', 'Female', '$12', '$3.75', '$16','17$','Two'],
+    [' 15', '55', 'Female', '$12', '$4.00', '$16','17$','Two'],
+    [' 16', '66', 'Female', '$12', '$4.25', '$16','17$','Two'],
+    [' 17', '77', 'Female', '$12', '$4.50', '$16','17$','Two'],
+    [' 18', '88', 'Female', '$12', '$4.75', '$16','17$','Two'],
+    [' 19', '99', 'Female', '$12', '$5.00', '$16','17$','Two'],
+    [' 20', '00', 'Female', '$12', '$5.25', '$16','17$','Two'],
   ]
 
   const columns = [
@@ -91,6 +91,22 @@ const IssueBook = () => {
     {
       name: 'Pictures',
       label: 'Student charges ',
+      options: {
+        filter: false, // Assuming pictures are not meant to be filtered
+        sort: false, // Assuming pictures are not meant to be sorted
+      },
+    },
+    {
+      name: 'Pictures',
+      label: 'Pick and Drop charges',
+      options: {
+        filter: false, // Assuming pictures are not meant to be filtered
+        sort: false, // Assuming pictures are not meant to be sorted
+      },
+    },
+    {
+      name: 'Pictures',
+      label: 'Vehicle provided for driving ',
       options: {
         filter: false, // Assuming pictures are not meant to be filtered
         sort: false, // Assuming pictures are not meant to be sorted

@@ -1,7 +1,7 @@
 import React from 'react'
 import * as yup from 'yup'
 import { useFormik } from 'formik'
-import { Grid, TextField, Button } from '@mui/material'
+import { Grid, TextField, Button, Input } from '@mui/material';
 import { useRouter } from 'next/navigation'
 const validationSchema = yup.object({
   name: yup.string().required('Name is required'),
@@ -12,6 +12,7 @@ const validationSchema = yup.object({
   phoneNumber: yup.string().required('Phone Number is required'),
   emailAddress: yup.string().email('Invalid email address').required('Email Address is required'),
   referencePerson: yup.string().required('Reference Person is required'),
+  file: yup.mixed().required('File is required'),
 })
 const AddMember = () => {
   const router = useRouter()
@@ -25,6 +26,7 @@ const AddMember = () => {
       phoneNumber: '',
       emailAddress: '',
       referencePerson: '',
+      file: null,
     },
     validationSchema: validationSchema,
     onSubmit: async (values: any) => {
@@ -169,6 +171,17 @@ const AddMember = () => {
               }}
               error={formik.touched.referencePerson && Boolean(formik.errors.referencePerson)}
               helperText={formik.touched.referencePerson && formik.errors.referencePerson}
+            />
+          </Grid>
+          <Grid item xs={12} sm={6}>
+            <Input
+              id='file'
+              name='file'
+              type='file'
+              fullWidth
+              onChange={(event) => formik.setFieldValue('file', event.currentTarget.files[0])}
+              error={formik.touched.file && Boolean(formik.errors.file)}
+              helperText={formik.touched.file && formik.errors.file}
             />
           </Grid>
 

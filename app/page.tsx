@@ -10,7 +10,7 @@ import { useEffect } from 'react'
 const Home = () => {
   return (
     <>
-      <div className='bg-[#222222] py-1 sm:py-12 h-screen'>
+      <div className=' py-1 sm:py-12 h-screen'>
         <Homes />
       </div>
     </>

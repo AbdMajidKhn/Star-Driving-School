@@ -14,7 +14,7 @@ declare module '@mui/material/styles' {
   }
 export const lightTheme = createTheme({
     palette: {
-        mode: "dark",
+        mode: "light",
     },
     breakpoints: {
        

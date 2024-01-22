@@ -5,7 +5,7 @@ import Signin from '@/components/Signin'
 export default function SignIn() {
   return (
     <>
-      <div className='bg-[#222222]'>
+      <div className=''>
         <div className='flex'>
           <div className='hidden sm:hidden md:hidden lg:block lg:w-1/3 xl:w-2/5'>
             <div>

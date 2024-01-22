@@ -1,7 +1,7 @@
 import React from 'react'
 import * as yup from 'yup'
 import { useFormik } from 'formik'
-import { Grid, TextField, Button } from '@mui/material'
+import { Grid, TextField, Button,Input } from '@mui/material'
 import { useRouter } from 'next/navigation'
 const validationSchema = yup.object({
   name: yup.string().required('Name is required'),
@@ -9,6 +9,8 @@ const validationSchema = yup.object({
   author: yup.string().required('Author is required'),
   rack: yup.string().required('Rack is required'),
   shelf: yup.string().required('Shelf is required'),
+  file: yup.mixed().required('File is required'),
+
 })
 const AddBook = () => {
   const router = useRouter()
@@ -21,6 +23,7 @@ const AddBook = () => {
       author: '',
       rack: '',
       shelf: '',
+      file: null,
     },
     validationSchema: validationSchema,
     onSubmit: async (values: any) => {
@@ -142,6 +145,34 @@ const AddBook = () => {
               }}
               error={formik.touched.shelf && Boolean(formik.errors.shelf)}
               helperText={formik.touched.shelf && formik.errors.shelf}
+            />
+          </Grid>
+          <Grid item xs={12} sm={6}>
+            <TextField
+              id='shelf'
+              name='Medical history '
+              label='Pick and Drop charges  '
+              variant='outlined'
+              fullWidth
+              type='text'
+              value={formik.values.shelf}
+              onChange={formik.handleChange}
+              onKeyDown={(event) => {
+                event.stopPropagation()
+              }}
+              error={formik.touched.shelf && Boolean(formik.errors.shelf)}
+              helperText={formik.touched.shelf && formik.errors.shelf}
+            />
+          </Grid>
+          <Grid item xs={12} sm={6}>
+            <Input
+              id='file'
+              name='file'
+              type='file'
+              fullWidth
+              onChange={(event) => formik.setFieldValue('file', event.currentTarget.files[0])}
+              error={formik.touched.file && Boolean(formik.errors.file)}
+              helperText={formik.touched.file && formik.errors.file}
             />
           </Grid>
 
