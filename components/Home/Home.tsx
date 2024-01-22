@@ -12,7 +12,7 @@ const Home = () => {
         </div>
         <div className="">
           <img
-            src="/images/dashboard.png" // Assuming the image is in the public/images directory
+            src="/Images/dashboard.png" // Assuming the image is in the public/images directory
             alt="Dashboard Image"
             width="100%" // Adjust the width as needed
             height="100%" // Adjust the height as needed
