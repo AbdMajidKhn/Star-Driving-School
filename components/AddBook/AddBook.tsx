@@ -170,9 +170,9 @@ const AddBook = () => {
               name='file'
               type='file'
               fullWidth
-              onChange={(event) => formik.setFieldValue('file', event.currentTarget.files[0])}
+              onChange={(event) => formik.setFieldValue('file', event.currentTarget)}
               error={formik.touched.file && Boolean(formik.errors.file)}
-              helperText={formik.touched.file && formik.errors.file}
+              // helperText={formik.touched.file && formik.errors.file}
             />
           </Grid>
 
