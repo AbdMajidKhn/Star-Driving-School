@@ -358,9 +358,9 @@ const MemberList = () => {
   return (
     <>
       <Box sx={{ padding: '24px' }}>
-      <Typography variant="h4" component="div" sx={{ textAlign: 'center', mb: 2, fontFamily: 'Russo One', fontSize: '2.5rem', fontWeight: 'bold', color: '#333',marginTop:'30px' }}>
-           Student List
-          </Typography>
+      <Typography variant="h4" component="div" sx={{ textAlign: 'center', mb: 2, fontFamily: 'Russo One', fontSize: '2.5rem', fontWeight: 'bold', color: '#333', marginTop: { xs: '50px', sm: '30px' } }}>
+  Student List
+</Typography>
         <MUIDataTable
           title={'Student Information'}
           data={data}

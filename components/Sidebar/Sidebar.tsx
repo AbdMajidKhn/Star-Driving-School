@@ -54,13 +54,15 @@ const Sidebar = () => {
           [`& .MuiDrawer-paper`]: { width: drawerWidth, boxSizing: 'border-box' },
         }}
       >
+            <Hidden smDown implementation="css">
         <div className='flex justify-center items-center'>
           <img src='Images/eco.png' style={{ borderRadius: '10%', width: '195px', height: '70px', marginTop: '40px' }} />
         </div>
+        </Hidden>
         <Box sx={{ overflow: 'auto' , marginTop: '40px'}}>
       <Hidden mdUp>
         {/* Toggle button for mobile */}
-        <Button variant="contained" color="primary" startIcon={<MenuIcon />} onClick={handleToggle} sx={{ '&:hover': { backgroundColor: '#c82f27'} }}>
+        <Button variant="contained" startIcon={<MenuIcon />} onClick={handleToggle} sx={{ backgroundColor: '#c82f27', '&:hover': { backgroundColor: '#c82f27' } }}>
   
 </Button>
       </Hidden>

@@ -7,9 +7,9 @@ const Home = () => {
     <Box sx={{ padding: '24px' }}>
       <Grid container spacing={2} justifyContent="center">
         <Grid item xs={12}>
-          <Typography variant="h4" component="div" sx={{ textAlign: 'center', mb: 2, fontFamily: 'Russo One', fontSize: '2.5rem', fontWeight: 'bold', color: '#333',marginTop:'30px' }}>
-            Analytics of Star Driving
-          </Typography>
+        <Typography variant="h4" component="div" sx={{ textAlign: 'center', mb: 2, fontFamily: 'Russo One', fontSize: '2.5rem', fontWeight: 'bold', color: '#333', marginTop: { xs: '50px', sm: '30px' } }}>
+  Analytics of Star Driving
+</Typography>
         </Grid>
         <Grid item xs={12} sm={10} md={8} lg={6}>
           <Image
