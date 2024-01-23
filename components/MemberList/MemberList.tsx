@@ -1,4 +1,4 @@
-import { TextField, Box } from '@mui/material'
+import { TextField, Box,Typography } from '@mui/material'
 import React, { useState } from 'react'
 import MUIDataTable from 'mui-datatables'
 import { Button } from '@mui/material'
@@ -358,9 +358,9 @@ const MemberList = () => {
   return (
     <>
       <Box sx={{ padding: '24px' }}>
-        <div className='mt-10 text-[20px] sm:text-[28px] md:text-[32px] lg:text-[40px] text-center font-russoone font-normal'>
-         Student List
-        </div>
+      <Typography variant="h4" component="div" sx={{ textAlign: 'center', mb: 2, fontFamily: 'Russo One', fontSize: '2.5rem', fontWeight: 'bold', color: '#333' }}>
+           Student List
+          </Typography>
         <MUIDataTable
           title={'Student Information'}
           data={data}

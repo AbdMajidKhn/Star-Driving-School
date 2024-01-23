@@ -1,4 +1,4 @@
-import { TextField, Box } from '@mui/material'
+import { TextField, Box,Grid ,Typography} from '@mui/material'
 import React, { useState } from 'react'
 import MUIDataTable from 'mui-datatables'
 import { Button } from '@mui/material'
@@ -158,31 +158,36 @@ const IssueBook = () => {
 
   const HeaderElements = () => {
     return (
-      <Button type='button' onClick={handleAddIssueBook}>
+      <Button type="button" onClick={handleAddIssueBook}>
         + Issue Fee
       </Button>
-    )
-  }
+    );
+  };
 
   const options = {
     filterType: 'checkbox' as const,
     customToolbar: HeaderElements,
-  }
-  return (
-    <>
-      <Box sx={{ padding: '24px' }}>
-        <div className='mt-10 text-[20px] sm:text-[28px] md:text-[32px] lg:text-[40px] text-center font-russoone font-normal'>
-          Fee Based
-        </div>
-        <MUIDataTable
-          title={'Fee Information'}
-          data={data}
-          columns={columns}
-          options={options}
-        />
-      </Box>
-    </>
-  )
-}
+  };
 
-export default IssueBook
+  return (
+    <Grid container spacing={2}>
+      <Grid item xs={12}>
+        <Box sx={{ padding: '24px' }}>
+        <Typography variant="h4" component="div" sx={{ textAlign: 'center', mb: 2, fontFamily: 'Russo One', fontSize: '2.5rem', fontWeight: 'bold', color: '#333' }}>
+           Fee Based
+          </Typography>
+          <Box sx={{ overflowX: 'auto' }}>
+            <MUIDataTable
+              title={'Fee Information'}
+              data={data}
+              columns={columns}
+              options={options}
+            />
+          </Box>
+        </Box>
+      </Grid>
+    </Grid>
+  );
+};
+
+export default IssueBook;

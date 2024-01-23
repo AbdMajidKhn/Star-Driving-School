@@ -1,8 +1,9 @@
-import React from 'react'
-import * as yup from 'yup'
-import { useFormik } from 'formik'
-import { Grid, TextField, Button,Input } from '@mui/material'
-import { useRouter } from 'next/navigation'
+import React from 'react';
+import * as yup from 'yup';
+import { useFormik } from 'formik';
+import { Grid, TextField, Button, Input, Typography } from '@mui/material';
+import { useRouter } from 'next/navigation';
+
 const validationSchema = yup.object({
   name: yup.string().required('Name is required'),
   category: yup.string().required('Category is required'),
@@ -10,36 +11,33 @@ const validationSchema = yup.object({
   rack: yup.string().required('Rack is required'),
   shelf: yup.string().required('Shelf is required'),
   file: yup.mixed().required('File is required'),
+});
 
-})
 const AddBook = () => {
-  const router = useRouter()
+  const router = useRouter();
   const formik = useFormik({
     initialValues: {
       name: '',
-      email:'',
-      phone_number:'',
+      email: '',
+      phone_number: '',
       category: '',
       author: '',
       rack: '',
       shelf: '',
       file: null,
+      pick_drop_charges:'',
     },
     validationSchema: validationSchema,
     onSubmit: async (values: any) => {
-      console.log(values)
-      router.push('/booklist')
+      console.log(values);
+      router.push('/booklist');
     },
-  })
-  // added here ..
+  });
+
   return (
     <div className='mt-6'>
       <form onSubmit={formik.handleSubmit}>
-        <Grid
-          container
-          spacing={3}
-          sx={{ marginTop: '5px !important', paddingLeft: '6rem', paddingRight: '6rem' }}
-        >
+        <Grid container spacing={3}>
           <Grid item xs={12} sm={6}>
             <TextField
               id='name'
@@ -56,15 +54,15 @@ const AddBook = () => {
           <Grid item xs={12} sm={6}>
             <TextField
               id='email'
-              name='Email'
+              name='email'
               label='Email'
               variant='outlined'
               fullWidth
               type='text'
-              value={formik.values.name}
+              value={formik.values.email}
               onChange={formik.handleChange}
-              error={formik.touched.name && Boolean(formik.errors.name)}
-              helperText={formik.touched.name && formik.errors.name}
+              error={formik.touched.email && Boolean(formik.errors.email)}
+              helperText={formik.touched.email && formik.errors.email}
             />
           </Grid>
           <Grid item xs={12} sm={6}>
@@ -75,18 +73,18 @@ const AddBook = () => {
               variant='outlined'
               type='number'
               fullWidth
-              value={formik.values.name}
+              value={formik.values.phone_number}
               onChange={formik.handleChange}
-              error={formik.touched.name && Boolean(formik.errors.name)}
-              helperText={formik.touched.name && formik.errors.name}
+              error={formik.touched.phone_number && Boolean(formik.errors.phone_number)}
+              helperText={formik.touched.phone_number && formik.errors.phone_number}
             />
           </Grid>
 
           <Grid item xs={12} sm={6}>
             <TextField
               id='category'
-              name='Driving license'
-              label='Driving license'
+              name='category'
+              label='Driving License'
               variant='outlined'
               fullWidth
               value={formik.values.category}
@@ -99,15 +97,12 @@ const AddBook = () => {
           <Grid item xs={12} sm={6}>
             <TextField
               id='author'
-              name='Driving experience'
-              label='Driving experience'
+              name='author'
+              label='Driving Experience'
               variant='outlined'
               fullWidth
               type='text'
               value={formik.values.author}
-              onKeyDown={(event) => {
-                event.stopPropagation()
-              }}
               onChange={formik.handleChange}
               error={formik.touched.author && Boolean(formik.errors.author)}
               helperText={formik.touched.author && formik.errors.author}
@@ -116,16 +111,13 @@ const AddBook = () => {
           <Grid item xs={12} sm={6}>
             <TextField
               id='rack'
-              name='Instructor experience '
-              label='Instructor experience '
+              name='rack'
+              label='Instructor Experience'
               variant='outlined'
               fullWidth
               type='text'
               value={formik.values.rack}
               onChange={formik.handleChange}
-              onKeyDown={(event) => {
-                event.stopPropagation()
-              }}
               error={formik.touched.rack && Boolean(formik.errors.rack)}
               helperText={formik.touched.rack && formik.errors.rack}
             />
@@ -133,35 +125,29 @@ const AddBook = () => {
           <Grid item xs={12} sm={6}>
             <TextField
               id='shelf'
-              name='Medical history '
-              label='Medical history  '
+              name='shelf'
+              label='Medical History'
               variant='outlined'
               fullWidth
               type='text'
               value={formik.values.shelf}
               onChange={formik.handleChange}
-              onKeyDown={(event) => {
-                event.stopPropagation()
-              }}
               error={formik.touched.shelf && Boolean(formik.errors.shelf)}
               helperText={formik.touched.shelf && formik.errors.shelf}
             />
           </Grid>
           <Grid item xs={12} sm={6}>
             <TextField
-              id='shelf'
-              name='Medical history '
-              label='Pick and Drop charges  '
+              id='pick_drop_charges'
+              name='pick_drop_charges'
+              label='Pick and Drop Charges'
               variant='outlined'
               fullWidth
               type='text'
-              value={formik.values.shelf}
+              value={formik.values.pick_drop_charges}
               onChange={formik.handleChange}
-              onKeyDown={(event) => {
-                event.stopPropagation()
-              }}
-              error={formik.touched.shelf && Boolean(formik.errors.shelf)}
-              helperText={formik.touched.shelf && formik.errors.shelf}
+              error={formik.touched.pick_drop_charges && Boolean(formik.errors.pick_drop_charges)}
+              helperText={formik.touched.pick_drop_charges && formik.errors.pick_drop_charges}
             />
           </Grid>
           <Grid item xs={12} sm={6}>
@@ -179,8 +165,6 @@ const AddBook = () => {
           <Grid item xs={12} container justifyContent='flex-end'>
             <Button
               type='submit'
-              // onClick={() => setError(true)}
-              // disabled={loading}
               variant='contained'
               color='primary'
               sx={{ marginLeft: 'auto' }}
@@ -191,7 +175,7 @@ const AddBook = () => {
         </Grid>
       </form>
     </div>
-  )
-}
+  );
+};
 
-export default AddBook
+export default AddBook;

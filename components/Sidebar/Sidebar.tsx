@@ -1,4 +1,5 @@
 import * as React from 'react'
+import { useState } from 'react'
 import Box from '@mui/material/Box'
 import Drawer from '@mui/material/Drawer'
 import AppBar from '@mui/material/AppBar'
@@ -17,11 +18,17 @@ import LibraryBooksIcon from '@mui/icons-material/LibraryBooks'
 import DashboardIcon from '@mui/icons-material/Dashboard'
 import Groups2Icon from '@mui/icons-material/Groups2'
 import { useRouter } from 'next/navigation'
+import Hidden from '@mui/material/Hidden';
+import Button from '@mui/material/Button';
+import MenuIcon from '@mui/icons-material/Menu';
 const drawerWidth = 240
 
 const Sidebar = () => {
   const router = useRouter();
-
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const handleToggle = () => {
+    setMobileOpen(!mobileOpen);
+  };
   const handleSiderNavigation = (itemText: string) => {
     console.log('The item text is:', itemText);
     if (itemText == 'Dashboard') {
@@ -37,6 +44,7 @@ const Sidebar = () => {
 
   return (
     <>
+    
       <Drawer
         variant='permanent'
         sx={{
@@ -46,20 +54,30 @@ const Sidebar = () => {
           [`& .MuiDrawer-paper`]: { width: drawerWidth, boxSizing: 'border-box' },
         }}
       >
-        <div className='flex justify-center items-center'>
-          <img src='Images/eco.png' style={{ borderRadius: '10%', width: '195px', height: '100px', marginTop: '20px' }} />
-        </div>
-        <Box sx={{ overflow: 'auto' }}>
-          <List>
-            <ListItem key='Dashboard' disablePadding sx={{ '&:hover': { backgroundColor: '#c82f27', color:'white' } }}>
-              <ListItemButton onClick={() => handleSiderNavigation('Dashboard')}>
-                <ListItemIcon>
-                  <DashboardIcon />
-                </ListItemIcon>
-                <ListItemText primary='Dashboard' />
-              </ListItemButton>
-            </ListItem>
-            <ListItem key='Instructor' disablePadding sx={{ '&:hover': { backgroundColor: '#c82f27' , color:'white' } }}>
+        <Hidden smDown implementation="css">
+  <div className='flex justify-center items-center'>
+    <img src='Images/eco.png' style={{ borderRadius: '10%', width: '195px', height: '70px', marginTop: '40px' }} />
+  </div>
+</Hidden>
+        <Box sx={{ overflow: 'auto' , marginTop: '40px'}}>
+      <Hidden mdUp>
+        {/* Toggle button for mobile */}
+        <Button variant="contained" color="primary" startIcon={<MenuIcon />} onClick={handleToggle} sx={{  backgroundColor: '#c82f27','&:hover': { backgroundColor: '#c82f27' } }}>
+  
+</Button>
+      </Hidden>
+      <Box component="nav" sx={{ display: { xs: mobileOpen ? 'block' : 'none', md: 'block' } }}>
+
+      <List>
+          <ListItem key="Dashboard" disablePadding sx={{ '&:hover': { backgroundColor: '#c82f27', color: 'white' } }}>
+            <ListItemButton onClick={() => handleSiderNavigation('Dashboard')}>
+              <ListItemIcon>
+                <DashboardIcon />
+              </ListItemIcon>
+              <ListItemText primary="Dashboard" />
+            </ListItemButton>
+          </ListItem>
+            <ListItem key='Instructor' disablePadding sx={{ '&:hover': { backgroundColor: '#c82f27',color:'white' } }}>
               <ListItemButton onClick={() => handleSiderNavigation('Instructor')}>
                 <ListItemIcon>
                   <LibraryBooksIcon />
@@ -67,7 +85,7 @@ const Sidebar = () => {
                 <ListItemText primary='Instructor' />
               </ListItemButton>
             </ListItem>
-            <ListItem key='Students' disablePadding sx={{ '&:hover': { backgroundColor: '#c82f27' , color:'white' } }}>
+            <ListItem key='Students' disablePadding sx={{ '&:hover': { backgroundColor: '#c82f27' ,color:'white' } }}>
               <ListItemButton onClick={() => handleSiderNavigation('Students')}>
                 <ListItemIcon>
                   <Groups2Icon />
@@ -78,7 +96,7 @@ const Sidebar = () => {
           </List>
           <Divider />
           <List>
-            <ListItem key='Fees' disablePadding sx={{ '&:hover': { backgroundColor: '#c82f27', color:'white' } }}>
+            <ListItem key='Fees' disablePadding sx={{ '&:hover': { backgroundColor: '#c82f27',color:'white' } }}>
               <ListItemButton onClick={() => handleSiderNavigation('Fees')}>
                 <ListItemIcon>
                   <LibraryBooksIcon />
@@ -87,6 +105,7 @@ const Sidebar = () => {
               </ListItemButton>
             </ListItem>
           </List>
+        </Box>
         </Box>
       </Drawer>
     </>

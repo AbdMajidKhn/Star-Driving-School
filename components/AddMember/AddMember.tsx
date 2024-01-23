@@ -1,8 +1,9 @@
-import React from 'react'
-import * as yup from 'yup'
-import { useFormik } from 'formik'
+import React from 'react';
+import * as yup from 'yup';
+import { useFormik } from 'formik';
 import { Grid, TextField, Button, Input } from '@mui/material';
-import { useRouter } from 'next/navigation'
+import { useRouter } from 'next/navigation';
+
 const validationSchema = yup.object({
   name: yup.string().required('Name is required'),
   idCardNumber: yup.string().required('ID Card Number is required'),
@@ -13,9 +14,10 @@ const validationSchema = yup.object({
   emailAddress: yup.string().email('Invalid email address').required('Email Address is required'),
   referencePerson: yup.string().required('Reference Person is required'),
   file: yup.mixed().required('File is required'),
-})
+});
+
 const AddMember = () => {
-  const router = useRouter()
+  const router = useRouter();
   const formik = useFormik({
     initialValues: {
       name: '',
@@ -30,18 +32,15 @@ const AddMember = () => {
     },
     validationSchema: validationSchema,
     onSubmit: async (values: any) => {
-      console.log(values)
-      router.push('/memberlist')
+      console.log(values);
+      router.push('/memberlist');
     },
-  })
+  });
+
   return (
     <div className='mt-6'>
       <form onSubmit={formik.handleSubmit}>
-        <Grid
-          container
-          spacing={3}
-          sx={{ marginTop: '5px !important', paddingLeft: '6rem', paddingRight: '6rem' }}
-        >
+        <Grid container spacing={3}>
           <Grid item xs={12} sm={6}>
             <TextField
               id='name'
@@ -68,7 +67,6 @@ const AddMember = () => {
               helperText={formik.touched.idCardNumber && formik.errors.idCardNumber}
             />
           </Grid>
-
           <Grid item xs={12} sm={6}>
             <TextField
               id='autoMembershipNumber'
@@ -78,10 +76,10 @@ const AddMember = () => {
               fullWidth
               type='text'
               value={formik.values.autoMembershipNumber}
-              onKeyDown={(event) => {
-                event.stopPropagation()
-              }}
               onChange={formik.handleChange}
+              onKeyDown={(event) => {
+                event.stopPropagation();
+              }}
               error={
                 formik.touched.autoMembershipNumber && Boolean(formik.errors.autoMembershipNumber)
               }
@@ -99,7 +97,7 @@ const AddMember = () => {
               value={formik.values.guardianName}
               onChange={formik.handleChange}
               onKeyDown={(event) => {
-                event.stopPropagation()
+                event.stopPropagation();
               }}
               error={formik.touched.guardianName && Boolean(formik.errors.guardianName)}
               helperText={formik.touched.guardianName && formik.errors.guardianName}
@@ -116,7 +114,7 @@ const AddMember = () => {
               value={formik.values.address}
               onChange={formik.handleChange}
               onKeyDown={(event) => {
-                event.stopPropagation()
+                event.stopPropagation();
               }}
               error={formik.touched.address && Boolean(formik.errors.address)}
               helperText={formik.touched.address && formik.errors.address}
@@ -133,7 +131,7 @@ const AddMember = () => {
               value={formik.values.phoneNumber}
               onChange={formik.handleChange}
               onKeyDown={(event) => {
-                event.stopPropagation()
+                event.stopPropagation();
               }}
               error={formik.touched.phoneNumber && Boolean(formik.errors.phoneNumber)}
               helperText={formik.touched.phoneNumber && formik.errors.phoneNumber}
@@ -150,7 +148,7 @@ const AddMember = () => {
               value={formik.values.emailAddress}
               onChange={formik.handleChange}
               onKeyDown={(event) => {
-                event.stopPropagation()
+                event.stopPropagation();
               }}
               error={formik.touched.emailAddress && Boolean(formik.errors.emailAddress)}
               helperText={formik.touched.emailAddress && formik.errors.emailAddress}
@@ -167,7 +165,7 @@ const AddMember = () => {
               value={formik.values.referencePerson}
               onChange={formik.handleChange}
               onKeyDown={(event) => {
-                event.stopPropagation()
+                event.stopPropagation();
               }}
               error={formik.touched.referencePerson && Boolean(formik.errors.referencePerson)}
               helperText={formik.touched.referencePerson && formik.errors.referencePerson}
@@ -181,15 +179,12 @@ const AddMember = () => {
               fullWidth
               onChange={(event) => formik.setFieldValue('file', event.currentTarget)}
               error={formik.touched.file && Boolean(formik.errors.file)}
-
             />
           </Grid>
 
           <Grid item xs={12} container justifyContent='flex-end'>
             <Button
               type='submit'
-              // onClick={() => setError(true)}
-              // disabled={loading}
               variant='contained'
               color='primary'
               sx={{ marginLeft: 'auto' }}
@@ -200,7 +195,7 @@ const AddMember = () => {
         </Grid>
       </form>
     </div>
-  )
-}
+  );
+};
 
-export default AddMember
+export default AddMember;

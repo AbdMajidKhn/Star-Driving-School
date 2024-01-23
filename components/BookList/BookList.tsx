@@ -1,7 +1,7 @@
-import { TextField, Box } from '@mui/material'
+import { TextField, Box,Typography } from '@mui/material'
 import React, { useState } from 'react'
 import MUIDataTable from 'mui-datatables'
-import { Button } from '@mui/material'
+import { Button, Grid } from '@mui/material'
 import MoreVertIcon from '@mui/icons-material/MoreVert'
 import Menu from '@mui/material/Menu'
 import MenuItem from '@mui/material/MenuItem'
@@ -155,30 +155,33 @@ const BookList = () => {
       },
     },
   ]
-  const HeaderElements = () => {
-    return (
-      <Button type='button' onClick={handleAddBook}>
-        + Add Instructor
-      </Button>
-    )
-  }
+  const HeaderElements = () => (
+    <Button type='button' onClick={handleAddBook}>
+      + Add Instructor
+    </Button>
+  );
 
   const options = {
     filterType: 'checkbox' as const,
     customToolbar: HeaderElements,
-  }
+  };
 
   return (
     <>
-      {' '}
       <Box sx={{ padding: '24px' }}>
-        <div className='mt-10 text-[20x] sm:text-[28px] md:text-[32px] lg:text-[40px] text-center font-russoone font-normal'>
-         Instructor List
-        </div>
-        <MUIDataTable title={'Instructor Information'} data={data} columns={columns} options={options} />
+        <Grid container spacing={3}>
+          <Grid item xs={12}>
+          <Typography variant="h4" component="div" sx={{ textAlign: 'center', mb: 2, fontFamily: 'Russo One', fontSize: '2.5rem', fontWeight: 'bold', color: '#333' }}>
+           Instructor List
+          </Typography>
+          </Grid>
+          <Grid item xs={12}>
+            <MUIDataTable title={'Instructor Information'} data={data} columns={columns} options={options} />
+          </Grid>
+        </Grid>
       </Box>
     </>
-  )
-}
+  );
+};
 
-export default BookList
+export default BookList;
