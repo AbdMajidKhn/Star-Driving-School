@@ -173,7 +173,7 @@ const IssueBook = () => {
     <Grid container spacing={2}>
       <Grid item xs={12}>
         <Box sx={{ padding: '24px' }}>
-        <Typography variant="h4" component="div" sx={{ textAlign: 'center', mb: 2, fontFamily: 'Russo One', fontSize: '2.5rem', fontWeight: 'bold', color: '#333', marginTop: { xs: '50px', sm: '30px' } }}>
+        <Typography variant="h4" component="div" sx={{ textAlign: 'center', mb: 2, fontFamily: 'Russo One', fontSize: '2.5rem', fontWeight: 'bold', color: '#333', marginTop: { xs: '70px', sm: '50px' } }}>
  Fee Based
 </Typography>
           <Box sx={{ overflowX: 'auto' }}>

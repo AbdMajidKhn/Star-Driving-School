@@ -26,7 +26,7 @@ const drawerWidth = 240
 const Sidebar = () => {
   const router = useRouter();
   const [mobileOpen, setMobileOpen] = useState(false);
-  const handleToggle = () => {
+  const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
   const handleSiderNavigation = (itemText: string) => {
@@ -44,28 +44,29 @@ const Sidebar = () => {
 
   return (
     <>
+    <Hidden mdUp>
+        {/* Toggle button for mobile */}
+        <Button variant="contained" startIcon={<MenuIcon />} onClick={handleDrawerToggle} sx={{ backgroundColor: '#c82f27', marginBottom: '50px', '&:hover': { backgroundColor: '#c82f27' } }}>
+</Button>
     
       <Drawer
-        variant='permanent'
-        sx={{
+         variant="temporary"
+         open={mobileOpen}
+         onClose={handleDrawerToggle}
+         sx={{
           width: drawerWidth,
           flexShrink: 0,
           Top: '100px',
           [`& .MuiDrawer-paper`]: { width: drawerWidth, boxSizing: 'border-box' },
         }}
       >
-            <Hidden smDown implementation="css">
-        <div className='flex justify-center items-center'>
-          <img src='Images/eco.png' style={{ borderRadius: '10%', width: '195px', height: '70px', marginTop: '40px' }} />
-        </div>
-        </Hidden>
+            
+  <div className='flex justify-center items-center'>
+    <img src='Images/eco.png' style={{ borderRadius: '10%', width: '50%', height: 'auto', marginTop: '40px' }} />
+  </div>
+
         <Box sx={{ overflow: 'auto' , marginTop: '40px'}}>
-      <Hidden mdUp>
-        {/* Toggle button for mobile */}
-        <Button variant="contained" startIcon={<MenuIcon />} onClick={handleToggle} sx={{ backgroundColor: '#c82f27', '&:hover': { backgroundColor: '#c82f27' } }}>
-  
-</Button>
-      </Hidden>
+      
       <Box component="nav" sx={{ display: { xs: mobileOpen ? 'block' : 'none', md: 'block' } }}>
 
       <List>
@@ -108,6 +109,67 @@ const Sidebar = () => {
         </Box>
         </Box>
       </Drawer>
+      </Hidden>
+      <Hidden smDown>
+      <Drawer
+        variant="permanent"
+        open
+        sx={{
+          width: drawerWidth,
+          flexShrink: 0,
+          [`& .MuiDrawer-paper`]: { width: drawerWidth, boxSizing: 'border-box' },
+        }}
+      >
+      <div className='flex justify-center items-center'>
+    <img src='Images/eco.png' style={{ borderRadius: '10%', width: '50%', height: 'auto', marginTop: '40px' }} />
+  </div>
+
+        <Box sx={{ overflow: 'auto' , marginTop: '40px'}}>
+      
+      <Box component="nav" sx={{ display: { xs: mobileOpen ? 'block' : 'none', md: 'block' } }}>
+
+      <List>
+          <ListItem key="Dashboard" disablePadding sx={{ '&:hover': { backgroundColor: '#c82f27', color: 'white' } }}>
+            <ListItemButton onClick={() => handleSiderNavigation('Dashboard')}>
+              <ListItemIcon>
+                <DashboardIcon />
+              </ListItemIcon>
+              <ListItemText primary="Dashboard" />
+            </ListItemButton>
+          </ListItem>
+            <ListItem key='Instructor' disablePadding sx={{ '&:hover': { backgroundColor: '#c82f27',color:'white' } }}>
+              <ListItemButton onClick={() => handleSiderNavigation('Instructor')}>
+                <ListItemIcon>
+                  <LibraryBooksIcon />
+                </ListItemIcon>
+                <ListItemText primary='Instructor' />
+              </ListItemButton>
+            </ListItem>
+            <ListItem key='Students' disablePadding sx={{ '&:hover': { backgroundColor: '#c82f27' ,color:'white' } }}>
+              <ListItemButton onClick={() => handleSiderNavigation('Students')}>
+                <ListItemIcon>
+                  <Groups2Icon />
+                </ListItemIcon>
+                <ListItemText primary='Students' />
+              </ListItemButton>
+            </ListItem>
+          </List>
+          <Divider />
+          <List>
+            <ListItem key='Fees' disablePadding sx={{ '&:hover': { backgroundColor: '#c82f27',color:'white' } }}>
+              <ListItemButton onClick={() => handleSiderNavigation('Fees')}>
+                <ListItemIcon>
+                  <LibraryBooksIcon />
+                </ListItemIcon>
+                <ListItemText primary='Fees' />
+              </ListItemButton>
+            </ListItem>
+          </List>
+        </Box>
+        </Box>
+
+      </Drawer>
+    </Hidden>
     </>
   );
 };
