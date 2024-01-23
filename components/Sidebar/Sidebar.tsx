@@ -44,7 +44,7 @@ const Sidebar = () => {
 
   return (
     <>
-    
+     
       <Drawer
         variant='permanent'
         sx={{
@@ -62,7 +62,7 @@ const Sidebar = () => {
         <Box sx={{ overflow: 'auto' , marginTop: '40px'}}>
       <Hidden mdUp>
         {/* Toggle button for mobile */}
-        <Button variant="contained" color="primary" startIcon={<MenuIcon />} onClick={handleToggle} sx={{  backgroundColor: '#c82f27','&:hover': { backgroundColor: '#c82f27' } }}>
+        <Button variant="contained" color="primary" startIcon={<MenuIcon />} onClick={handleToggle} sx={{  backgroundColor: '#c82f27', '&:hover': { backgroundColor: '#c82f27', color: 'white' } }}>
   
 </Button>
       </Hidden>
@@ -93,9 +93,7 @@ const Sidebar = () => {
                 <ListItemText primary='Students' />
               </ListItemButton>
             </ListItem>
-          </List>
-          <Divider />
-          <List>
+          
             <ListItem key='Fees' disablePadding sx={{ '&:hover': { backgroundColor: '#c82f27',color:'white' } }}>
               <ListItemButton onClick={() => handleSiderNavigation('Fees')}>
                 <ListItemIcon>
@@ -108,6 +106,7 @@ const Sidebar = () => {
         </Box>
         </Box>
       </Drawer>
+      
     </>
   );
 };

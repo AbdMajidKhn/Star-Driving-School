@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import MenuIcon from '@mui/icons-material/Menu'
+import Hidden from '@mui/material/Hidden';
 import {
   AppBar,
   Box,
@@ -74,9 +75,9 @@ const Navbar = () => {
             <img alt='AddToCartBtn' className='w-[100px] h-[90px] ' src='./Images/lottery.png' />
           </Grid>
         </SocialBox> */}
-
+<Hidden smDown implementation="css">
         <div className='ml-[11.5rem] text-[20x] sm:text-[28px] md:text-[32px] lg:text-[24px] font-russoone font-normal' >
-        All Star Driving School        </div>
+        All Star Driving School        </div></Hidden>
         {/* </Typography> */}
 
         <Typography />
