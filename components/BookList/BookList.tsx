@@ -164,7 +164,7 @@ const BookList = () => {
   const options = {
     filterType: 'checkbox' as const,
     customToolbar: HeaderElements,
-    responsive: 'vertical',
+    responsive: 'vertical' as const, // use 'as const' to narrow down the type to a specific string literal
   };
 
   return (
@@ -176,7 +176,7 @@ const BookList = () => {
   Instructor List
 </Typography>
           </Grid>
-          <Grid item xs={12}>
+          <Grid item xs={12} sm={6} md={12}>          
             <MUIDataTable title={'Instructor Information'} data={data} columns={columns} options={options} />
           </Grid>
         </Grid>
