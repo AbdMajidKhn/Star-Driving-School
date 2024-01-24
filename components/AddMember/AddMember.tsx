@@ -47,7 +47,7 @@ const AddMember = () => {
               name='name'
               label='Name'
               variant='outlined'
-              fullWidth
+              sx={{ maxWidth: '300px', backgroundColor: '#f5f5f5', borderRadius: '5px',marginLeft:"100px" }}
               value={formik.values.name}
               onChange={formik.handleChange}
               error={formik.touched.name && Boolean(formik.errors.name)}
@@ -58,9 +58,10 @@ const AddMember = () => {
             <TextField
               id='idCardNumber'
               name='idCardNumber'
+              type='number'
               label='ID Card Number'
               variant='outlined'
-              fullWidth
+              sx={{ maxWidth: '300px', backgroundColor: '#f5f5f5', borderRadius: '5px',marginLeft:"100px" }}
               value={formik.values.idCardNumber}
               onChange={formik.handleChange}
               error={formik.touched.idCardNumber && Boolean(formik.errors.idCardNumber)}
@@ -73,8 +74,8 @@ const AddMember = () => {
               name='autoMembershipNumber'
               label='Auto Membership Number'
               variant='outlined'
-              fullWidth
-              type='text'
+              sx={{ maxWidth: '300px', backgroundColor: '#f5f5f5', borderRadius: '5px',marginLeft:"100px" }}
+              type='number'
               value={formik.values.autoMembershipNumber}
               onChange={formik.handleChange}
               onKeyDown={(event) => {
@@ -92,7 +93,7 @@ const AddMember = () => {
               name='guardianName'
               label='Guardian Name'
               variant='outlined'
-              fullWidth
+              sx={{ maxWidth: '300px', backgroundColor: '#f5f5f5', borderRadius: '5px',marginLeft:"100px" }}
               type='text'
               value={formik.values.guardianName}
               onChange={formik.handleChange}
@@ -109,7 +110,7 @@ const AddMember = () => {
               name='address'
               label='Address'
               variant='outlined'
-              fullWidth
+              sx={{ maxWidth: '300px', backgroundColor: '#f5f5f5', borderRadius: '5px',marginLeft:"100px" }}
               type='text'
               value={formik.values.address}
               onChange={formik.handleChange}
@@ -126,8 +127,8 @@ const AddMember = () => {
               name='phoneNumber'
               label='Phone Number'
               variant='outlined'
-              fullWidth
-              type='text'
+              sx={{ maxWidth: '300px', backgroundColor: '#f5f5f5', borderRadius: '5px',marginLeft:"100px" }}
+              type='number'
               value={formik.values.phoneNumber}
               onChange={formik.handleChange}
               onKeyDown={(event) => {
@@ -143,7 +144,7 @@ const AddMember = () => {
               name='emailAddress'
               label='Email Address'
               variant='outlined'
-              fullWidth
+              sx={{ maxWidth: '300px', backgroundColor: '#f5f5f5', borderRadius: '5px',marginLeft:"100px" }}
               type='text'
               value={formik.values.emailAddress}
               onChange={formik.handleChange}
@@ -160,7 +161,7 @@ const AddMember = () => {
               name='referencePerson'
               label='Reference Person'
               variant='outlined'
-              fullWidth
+              sx={{ maxWidth: '300px', backgroundColor: '#f5f5f5', borderRadius: '5px',marginLeft:"100px" }}
               type='text'
               value={formik.values.referencePerson}
               onChange={formik.handleChange}
@@ -176,7 +177,7 @@ const AddMember = () => {
               id='file'
               name='file'
               type='file'
-              fullWidth
+              sx={{ maxWidth: '260px', backgroundColor: '#f5f5f5', borderRadius: '5px',marginLeft:"100px" }}
               onChange={(event) => formik.setFieldValue('file', event.currentTarget)}
               error={formik.touched.file && Boolean(formik.errors.file)}
             />
@@ -186,8 +187,8 @@ const AddMember = () => {
             <Button
               type='submit'
               variant='contained'
-              color='primary'
-              sx={{ marginLeft: 'auto' }}
+              
+              sx={{ marginRight: '850px',backgroundColor:'#c82f27' }}
             >
               Submit
             </Button>

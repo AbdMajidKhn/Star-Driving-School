@@ -44,7 +44,7 @@ const AddBook = () => {
               name='name'
               label='Name'
               variant='outlined'
-              fullWidth
+              sx={{ maxWidth: '300px', backgroundColor: '#f5f5f5', borderRadius: '5px',marginLeft:"100px" }}
               value={formik.values.name}
               onChange={formik.handleChange}
               error={formik.touched.name && Boolean(formik.errors.name)}
@@ -57,7 +57,7 @@ const AddBook = () => {
               name='email'
               label='Email'
               variant='outlined'
-              fullWidth
+              sx={{ maxWidth: '300px', backgroundColor: '#f5f5f5', borderRadius: '5px',marginLeft:"100px" }}
               type='text'
               value={formik.values.email}
               onChange={formik.handleChange}
@@ -72,7 +72,7 @@ const AddBook = () => {
               label='Phone Number'
               variant='outlined'
               type='number'
-              fullWidth
+              sx={{ maxWidth: '300px', backgroundColor: '#f5f5f5', borderRadius: '5px',marginLeft:"100px" }}
               value={formik.values.phone_number}
               onChange={formik.handleChange}
               error={formik.touched.phone_number && Boolean(formik.errors.phone_number)}
@@ -86,7 +86,8 @@ const AddBook = () => {
               name='category'
               label='Driving License'
               variant='outlined'
-              fullWidth
+              type='number'
+              sx={{ maxWidth: '300px', backgroundColor: '#f5f5f5', borderRadius: '5px',marginLeft:"100px" }}
               value={formik.values.category}
               onChange={formik.handleChange}
               error={formik.touched.category && Boolean(formik.errors.category)}
@@ -100,8 +101,8 @@ const AddBook = () => {
               name='author'
               label='Driving Experience'
               variant='outlined'
-              fullWidth
-              type='text'
+              sx={{ maxWidth: '300px', backgroundColor: '#f5f5f5', borderRadius: '5px',marginLeft:"100px" }}
+              type='number'
               value={formik.values.author}
               onChange={formik.handleChange}
               error={formik.touched.author && Boolean(formik.errors.author)}
@@ -114,9 +115,9 @@ const AddBook = () => {
               name='rack'
               label='Instructor Experience'
               variant='outlined'
-              fullWidth
-              type='text'
-              value={formik.values.rack}
+              sx={{ maxWidth: '300px', backgroundColor: '#f5f5f5', borderRadius: '5px',marginLeft:"100px" }}
+              type='number'         
+             value={formik.values.rack}
               onChange={formik.handleChange}
               error={formik.touched.rack && Boolean(formik.errors.rack)}
               helperText={formik.touched.rack && formik.errors.rack}
@@ -128,7 +129,7 @@ const AddBook = () => {
               name='shelf'
               label='Medical History'
               variant='outlined'
-              fullWidth
+              sx={{ maxWidth: '300px', backgroundColor: '#f5f5f5', borderRadius: '5px',marginLeft:"100px" }}
               type='text'
               value={formik.values.shelf}
               onChange={formik.handleChange}
@@ -142,8 +143,8 @@ const AddBook = () => {
               name='pick_drop_charges'
               label='Pick and Drop Charges'
               variant='outlined'
-              fullWidth
-              type='text'
+              sx={{ maxWidth: '300px', backgroundColor: '#f5f5f5', borderRadius: '5px',marginLeft:"100px" }}
+              type='number'
               value={formik.values.pick_drop_charges}
               onChange={formik.handleChange}
               error={formik.touched.pick_drop_charges && Boolean(formik.errors.pick_drop_charges)}
@@ -155,7 +156,7 @@ const AddBook = () => {
               id='file'
               name='file'
               type='file'
-              fullWidth
+              sx={{ maxWidth: '260px', backgroundColor: '#f5f5f5', borderRadius: '5px',marginLeft:"100px" }}
               onChange={(event) => formik.setFieldValue('file', event.currentTarget)}
               error={formik.touched.file && Boolean(formik.errors.file)}
               // helperText={formik.touched.file && formik.errors.file}
@@ -166,8 +167,8 @@ const AddBook = () => {
             <Button
               type='submit'
               variant='contained'
-              color='primary'
-              sx={{ marginLeft: 'auto' }}
+              
+              sx={{ marginRight: '850px',backgroundColor:'#c82f27' }}
             >
               Submit
             </Button>

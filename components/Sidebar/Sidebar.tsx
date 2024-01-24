@@ -46,7 +46,7 @@ const Sidebar = () => {
     <>
     <Hidden mdUp>
         {/* Toggle button for mobile */}
-        <Button variant="contained" startIcon={<MenuIcon />} onClick={handleDrawerToggle} sx={{ backgroundColor: '#c82f27', marginBottom: '50px', '&:hover': { backgroundColor: '#c82f27' } }}>
+        <Button variant="contained" startIcon={<MenuIcon />} onClick={handleDrawerToggle} sx={{ backgroundColor: '#c82f27', height:'200px',marginBottom: '50px', '&:hover': { backgroundColor: '#c82f27' } }}>
 </Button>
     
       <Drawer

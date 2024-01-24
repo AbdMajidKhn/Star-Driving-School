@@ -164,6 +164,7 @@ const BookList = () => {
   const options = {
     filterType: 'checkbox' as const,
     customToolbar: HeaderElements,
+    responsive: 'vertical',
   };
 
   return (
